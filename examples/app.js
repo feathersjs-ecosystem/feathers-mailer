@@ -1,16 +1,14 @@
-import mandrillTransport from 'nodemailer-mandrill-transport'
-import createMailer from '../src'
+import mandrill from 'nodemailer-mandrill-transport'
+import Mailer from '../src'
 import feathers from 'feathers'
 import rest from 'feathers-rest';
 import bodyParser from 'body-parser';
 
-const mailerService = createMailer({
-  Model: mandrillTransport({
-    auth: {
-      apiKey: process.env.MANDRILL_API_KEY || 'notakey'
-    }
-  })
-});
+const mailer = Mailer(mandrill({
+  auth: {
+    apiKey: process.env.MANDRILL_API_KEY || 'notakey'
+  }
+}));
 
 // Create a feathers instance.
 var app = feathers()
@@ -20,7 +18,7 @@ var app = feathers()
   .use(bodyParser.json())
   // Turn on URL-encoded parser for REST services
   .use(bodyParser.urlencoded({extended: true}))
-  .use('/mails', mailerService);
+  .use('/mailer', mailer);
 
 // A basic error handler, just like Express
 app.use(function(error, req, res, next){
@@ -30,4 +28,4 @@ app.use(function(error, req, res, next){
 // Start the server
 module.exports = app.listen(3030);
 
-console.log('feathers-mailer service running on 127.0.0.1:3030/mails');
+console.log('feathers-mailer service running on 127.0.0.1:3030/mailer');

@@ -10,9 +10,7 @@ describe('feathers-mailer', () => {
 
   it('basic functionality', done => {
     assert.equal(typeof createMailer, 'function', 'exports function');
-    const mailer = createMailer({
-      Model: stubTransport()
-    });
+    const mailer = createMailer(stubTransport());
     let mailData = {
       from: '"Alice" <alice@example.com>',
       to: ['bob@example.com', '"Carol" <carol@example.com>'],

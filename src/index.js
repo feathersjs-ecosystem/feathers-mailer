@@ -8,21 +8,13 @@ import Mailer from 'nodemailer';
 const debug = makeDebug('feathers-mailer');
 
 class Service {
-  constructor (options) {
-    debug('constructor', options);
-    if (!options) {
-      throw new Error('feathers-mailer: constructor `options` must be provided');
+  constructor (transport, defaults) {
+    debug('constructor', transport);
+    if (!transport) {
+      throw new Error('feathers-mailer: constructor `transport` must be provided');
     }
 
-    if (!options.Model) {
-      throw new Error('feathers-mailer: constructor `options.Model` must be provided');
-    }
-
-    this.Model = Mailer.createTransport(
-      options.Model,
-      options.defaults
-    );
-    this.id = options.id || 'id';
+    this.transporter = Mailer.createTransport(transport, defaults);
   }
 
   extend (obj) {
@@ -33,12 +25,12 @@ class Service {
     debug('create', body, params);
     // TODO maybe body should be text/html field
     // and params is rest of options
-    this.Model.sendMail(body, cb);
+    this.transporter.sendMail(body, cb);
   }
 }
 
-export default function init(options) {
-  return new Service(options);
+export default function init(transport, defaults) {
+  return new Service(transport, defaults);
 }
 
 init.Service = Service;
