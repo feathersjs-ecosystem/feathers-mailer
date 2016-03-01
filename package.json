@@ -2,7 +2,7 @@
   "name": "feathers-mailer",
   "description": "Feathers mailer service",
   "version": "1.0.2",
-  "homepage": "https://github.com/ahdinosaur/feathers-mailer",
+  "homepage": "https://github.com/feathersjs/feathers-mailer",
   "main": "lib/",
   "keywords": [
     "feathers",
@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ahdinosaur/feathers-mailer.git"
+    "url": "git://github.com/feathersjs/feathers-mailer.git"
   },
   "author": {
     "name": "Feathers contributors",
@@ -20,7 +20,7 @@
   },
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/ahdinosaur/feathers-mailer/issues"
+    "url": "https://github.com/feathersjs/feathers-mailer/issues"
   },
   "engines": {
     "node": ">= 0.12.0"

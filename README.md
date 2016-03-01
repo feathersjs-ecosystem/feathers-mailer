@@ -1,6 +1,6 @@
 # feathers-mailer
 
-[![Build Status](https://travis-ci.org/ahdinosaur/feathers-mailer.png?branch=master)](https://travis-ci.org/ahdinosaur/feathers-mailer)
+[![Build Status](https://travis-ci.org/feathersjs/feathers-mailer.png?branch=master)](https://travis-ci.org/feathersjs/feathers-mailer)
 
 > Feathers mailer service using [`nodemailer`](https://github.com/nodemailer/nodemailer)
 
