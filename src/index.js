@@ -25,7 +25,10 @@ class Service {
 
     // TODO maybe body should be text/html field
     // and params is rest of options
-    this.transporter.sendMail(body, cb);
+    
+    // https://github.com/nodemailer/nodemailer#set-up-smtp says:
+    // If callback argument is not set then the method returns a Promise object. 
+    return this.transporter.sendMail(body, cb);
   }
 }
 
