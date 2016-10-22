@@ -1,7 +1,7 @@
 import Debug from 'debug';
 import Proto from 'uberproto';
 import Mailer from 'nodemailer';
-//import errors from 'feathers-errors';
+// import errors from 'feathers-errors';
 
 const debug = Debug('feathers-mailer');
 
@@ -25,14 +25,14 @@ class Service {
 
     // TODO maybe body should be text/html field
     // and params is rest of options
-    
+
     // https://github.com/nodemailer/nodemailer#set-up-smtp says:
-    // If callback argument is not set then the method returns a Promise object. 
+    // If callback argument is not set then the method returns a Promise object.
     return this.transporter.sendMail(body, cb);
   }
 }
 
-export default function init(transport, defaults) {
+export default function init (transport, defaults) {
   return new Service(transport, defaults);
 }
 
