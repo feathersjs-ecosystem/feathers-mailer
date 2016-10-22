@@ -1,6 +1,6 @@
-import mandrill from 'nodemailer-mandrill-transport'
-import Mailer from '../src'
-import feathers from 'feathers'
+import mandrill from 'nodemailer-mandrill-transport';
+import Mailer from '../src';
+import feathers from 'feathers';
 import rest from 'feathers-rest';
 import bodyParser from 'body-parser';
 
@@ -21,7 +21,7 @@ var app = feathers()
   .use('/mailer', mailer);
 
 // A basic error handler, just like Express
-app.use(function(error, req, res, next){
+app.use(function (error, req, res, next) {
   res.json(error);
 });
 
