@@ -1,6 +1,11 @@
 # feathers-mailer
 
 [![Build Status](https://travis-ci.org/feathersjs/feathers-mailer.png?branch=master)](https://travis-ci.org/feathersjs/feathers-mailer)
+[![Code Climate](https://codeclimate.com/github/feathersjs/feathers-mailer.png)](https://codeclimate.com/github/feathersjs/feathers-mailer)
+[![Test Coverage](https://codeclimate.com/github/feathersjs/feathers-mailer/badges/coverage.svg)](https://codeclimate.com/github/feathersjs/feathers-mailer/coverage)
+[![Dependency Status](https://img.shields.io/david/feathersjs/feathers-mailer.svg?style=flat-square)](https://david-dm.org/feathersjs/feathers-mailer)
+[![Download Status](https://img.shields.io/npm/dm/feathers-mailer.svg?style=flat-square)](https://www.npmjs.com/package/feathers-mailer)
+[![Slack Status](http://slack.feathersjs.com/badge.svg)](http://slack.feathersjs.com)
 
 > Feathers mailer service using [`nodemailer`](https://github.com/nodemailer/nodemailer)
 
