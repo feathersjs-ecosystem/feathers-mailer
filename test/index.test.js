@@ -23,12 +23,14 @@ describe('feathers-mailer', () => {
         Because the revolution will not be televised.
       `
     };
-    mailer.create(mailData, {}, function (err, info) {
-      assert.ifError(err);
+    mailer.create(mailData).then(function (info) {
       assert.equal(info.envelope.from, getEmailAddress(mailData.from));
       assert.deepEqual(info.envelope.to, mailData.to.map(getEmailAddress));
       assert.ok(info.messageId);
       assert.ok(info.response.toString());
+      done();
+    }).catch(function (err) {
+      assert.ifError(err);
       done();
     });
   });
