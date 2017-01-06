@@ -28,7 +28,7 @@ class Service {
 
     // https://github.com/nodemailer/nodemailer#set-up-smtp says:
     // If callback argument is not set then the method returns a Promise object.
-    return this.transporter.sendMail(body, cb);
+    return this.transporter.sendMail(body);
   }
 }
 
