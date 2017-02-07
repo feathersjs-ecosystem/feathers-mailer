@@ -1,7 +1,7 @@
 {
   "name": "feathers-mailer",
   "description": "Feathers mailer service",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "homepage": "https://github.com/feathersjs/feathers-mailer",
   "main": "lib/",
   "keywords": [
