@@ -60,7 +60,7 @@
     "uberproto": "^1.2.0"
   },
   "devDependencies": {
-    "address-rfc2822": "^1.0.0",
+    "address-rfc2822": "^2.0.0",
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
     "babel-plugin-add-module-exports": "^0.2.1",
