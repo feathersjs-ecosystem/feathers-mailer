@@ -1,5 +1,16 @@
 # Change Log
 
+## [v3.0.0](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v3.0.0) (2018-02-14)
+[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v2.0.0...v3.0.0)
+
+**Merged pull requests:**
+
+- Update to new plugin infrastructure [\#12](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/12) ([daffl](https://github.com/daffl))
+- Update mocha to the latest version 🚀 [\#11](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/11) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update semistandard to the latest version 🚀 [\#10](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/10) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update mocha to the latest version 🚀 [\#9](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/9) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update debug to the latest version 🚀 [\#8](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/8) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v2.0.0](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v2.0.0) (2017-07-04)
 [Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v1.0.6...v2.0.0)
 
