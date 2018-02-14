@@ -1,13 +1,9 @@
-import assert from 'assert';
-import createMailer from '../src';
-import stubTransport from 'nodemailer-stub-transport';
-import addressParser from 'address-rfc2822';
+const assert = require('assert');
+const createMailer = require('../lib');
+const stubTransport = require('nodemailer-stub-transport');
+const addressParser = require('address-rfc2822');
 
 describe('feathers-mailer', () => {
-  it('is CommonJS compatible', () => {
-    assert.equal(typeof require('../lib'), 'function');
-  });
-
   it('basic functionality', done => {
     assert.equal(typeof createMailer, 'function', 'exports function');
     const mailer = createMailer(stubTransport());
