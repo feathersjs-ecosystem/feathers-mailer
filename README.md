@@ -18,34 +18,36 @@ If using a [transport plugin](https://github.com/nodemailer/nodemailer#send-usin
 
 ## API
 
-### `import Mailer from 'feathers-mailer'`
+```js
+const mailer = require('feathers-mailer');
+```
 
-### `mailer = Mailer(transport, defaults)`
+### `app.use('/emails', mailer(transport, defaults))`
 
 - `transport` can be either [SMTP options](https://github.com/nodemailer/nodemailer#set-up-smtp) or a [transport plugin](https://github.com/nodemailer/nodemailer#send-using-a-transport-plugin) with associated options.
 - `defaults` is an object that defines default values for mail options.
 
-### `mailer.create(body, params)`
+### `service.create(body, params)`
 
-`mailer.create` is a thin wrapper for [`transporter.sendMail`](https://github.com/nodemailer/nodemailer#sending-mail), accepting `body` and returning `err` and `info`.
+`service.create` is a thin wrapper for [`transporter.sendMail`](https://github.com/nodemailer/nodemailer#sending-mail), accepting `body` and returning a promise.
 
 See [here](https://github.com/nodemailer/nodemailer#e-mail-message-fields) for possible fields of `body`.
 
 ## Example
 
 ```js
-import Mailer from 'feathers-mailer'
-import mandrill from 'nodemailer-mandrill-transport'
+const mailer = require('feathers-mailer');
+const mandrill = require('nodemailer-mandrill-transport');
 
 // Register the service, see below for an example
-app.use('/mailer', Mailer(mandrill({
+app.use('/mailer', mailer(mandrill({
   auth: {
     apiKey: process.env.MANDRILL_API_KEY
   }
 })));
 
 // Use the service
-var email = {
+const email = {
    from: 'FROM_EMAIL',
    to: 'TO_EMAIL',
    subject: 'Sendgrid test',
