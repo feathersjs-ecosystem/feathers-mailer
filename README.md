@@ -13,7 +13,7 @@
 npm install feathers-mailer --save
 ```
 
-If using a [transport plugin](https://github.com/nodemailer/nodemailer#send-using-a-transport-plugin), install the respective module.
+If using a [transport plugin](https://nodemailer.com/transports/), install the respective module.
 
 
 ## API
@@ -24,14 +24,14 @@ const mailer = require('feathers-mailer');
 
 ### `app.use('/emails', mailer(transport, defaults))`
 
-- `transport` can be either [SMTP options](https://github.com/nodemailer/nodemailer#set-up-smtp) or a [transport plugin](https://github.com/nodemailer/nodemailer#send-using-a-transport-plugin) with associated options.
+- `transport` can be either [SMTP options](https://nodemailer.com/smtp/#general-options) or a [transport plugin](https://nodemailer.com/transports/) with associated options.
 - `defaults` is an object that defines default values for mail options.
 
 ### `service.create(body, params)`
 
-`service.create` is a thin wrapper for [`transporter.sendMail`](https://github.com/nodemailer/nodemailer#sending-mail), accepting `body` and returning a promise.
+`service.create` is a thin wrapper for [`transporter.sendMail`](https://nodemailer.com/usage/#sending-mail), accepting `body` and returning a promise.
 
-See [here](https://github.com/nodemailer/nodemailer#e-mail-message-fields) for possible fields of `body`.
+See [here](https://nodemailer.com/message/#commmon-fields) for possible fields of `body`.
 
 ## Example
 
