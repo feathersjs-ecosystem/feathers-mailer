@@ -52,7 +52,7 @@
   "dependencies": {
     "debug": "^3.1.0",
     "nodemailer": "^4.4.2",
-    "uberproto": "^1.2.0"
+    "uberproto": "^2.0.0"
   },
   "devDependencies": {
     "address-rfc2822": "^2.0.0",
