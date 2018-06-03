@@ -1,5 +1,13 @@
 # Change Log
 
+## [v3.0.1](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v3.0.1) (2018-06-03)
+[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v3.0.0...v3.0.1)
+
+**Merged pull requests:**
+
+- Update uberproto to the latest version 🚀 [\#14](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/14) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update broken links in README [\#13](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/13) ([robbiedhickey](https://github.com/robbiedhickey))
+
 ## [v3.0.0](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v3.0.0) (2018-02-14)
 [Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v2.0.0...v3.0.0)
 
