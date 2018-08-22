@@ -42,7 +42,7 @@ const nodemailer = require('nodemailer');
 (async function (app) {
   const account = await nodemailer.createTestAccount(); // internet required
 
-  const transporter = nodemailer.createTransport({
+  const transporter = {
     host: account.smtp.host,
     port: account.smtp.port,
     secure: account.smtp.secure, // 487 only
@@ -51,7 +51,7 @@ const nodemailer = require('nodemailer');
       user: account.user, // generated ethereal user
       pass: account.pass // generated ethereal password
     }
-  });
+  };
 
   app.use('mailer', Mailer(transporter, {from: process.env.FROM_EMAIL});
 
