@@ -33,7 +33,7 @@ const mailer = require('feathers-mailer');
 
 See [here](https://nodemailer.com/message/#commmon-fields) for possible fields of `body`.
 
-## Example with Madrill
+## Example with Mandrill
 
 ```js
 const mailer = require('feathers-mailer');
