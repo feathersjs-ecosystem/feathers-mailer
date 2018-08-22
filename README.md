@@ -53,11 +53,11 @@ const nodemailer = require('nodemailer');
     }
   };
 
-  app.use('mailer', Mailer(transporter, {from: process.env.FROM_EMAIL});
+  // Register service and setting default From Email
+  app.use('mailer', Mailer(transporter, { from: account.user });
 
   // Use the service
   const email = {
-     from: account.user, // From email address
      to: 'president@mars.com',
      subject: 'SMTP test',
      html: 'This is the email body'
