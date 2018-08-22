@@ -54,7 +54,7 @@ const nodemailer = require('nodemailer');
   };
 
   // Register service and setting default From Email
-  app.use('mailer', Mailer(transporter, { from: account.user });
+  app.use('mailer', mailer(transporter, { from: account.user });
 
   // Use the service
   const email = {
