@@ -33,35 +33,7 @@ const mailer = require('feathers-mailer');
 
 See [here](https://nodemailer.com/message/#commmon-fields) for possible fields of `body`.
 
-## Example with Mandrill
-
-```js
-const mailer = require('feathers-mailer');
-const mandrill = require('nodemailer-mandrill-transport');
-
-// Register the service, see below for an example
-app.use('/mailer', mailer(mandrill({
-  auth: {
-    apiKey: process.env.MANDRILL_API_KEY
-  }
-})));
-
-// Use the service
-const email = {
-   from: 'FROM_EMAIL',
-   to: 'TO_EMAIL',
-   subject: 'Mandrill test',
-   html: 'This is the email body'
-};
-
-app.service('mailer').create(email).then(function (result) {
-  console.log('Sent email', result);
-}).catch(err => {
-  console.log(err);
-});
-```
-
-## Example with Smtp (ethereal)
+## Example with SMTP (ethereal)
 
 ```js
 const mailer = require('feathers-mailer');
@@ -94,6 +66,34 @@ const nodemailer = require('nodemailer');
   await app.service('mailer').create(email)
   console.log(`Preview URL: ${nodemailer.getTestMessageUrl(info)}`)
 })(app)
+```
+
+## Example with Mandrill
+
+```js
+const mailer = require('feathers-mailer');
+const mandrill = require('nodemailer-mandrill-transport');
+
+// Register the service, see below for an example
+app.use('/mailer', mailer(mandrill({
+  auth: {
+    apiKey: process.env.MANDRILL_API_KEY
+  }
+})));
+
+// Use the service
+const email = {
+   from: 'FROM_EMAIL',
+   to: 'TO_EMAIL',
+   subject: 'Mandrill test',
+   html: 'This is the email body'
+};
+
+app.service('mailer').create(email).then(function (result) {
+  console.log('Sent email', result);
+}).catch(err => {
+  console.log(err);
+});
 ```
 
 ## License
