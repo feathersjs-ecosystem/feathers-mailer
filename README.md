@@ -67,7 +67,8 @@ app.service('mailer').create(email).then(function (result) {
 const mailer = require('feathers-mailer');
 const nodemailer = require('nodemailer');
 
-const account = await nodemailer.createTestAccount().catch(console.log);
+(async function (app) {
+  const account = await nodemailer.createTestAccount(); // internet required
 
   const transporter = nodemailer.createTransport({
     host: account.smtp.host,
@@ -82,19 +83,17 @@ const account = await nodemailer.createTestAccount().catch(console.log);
 
   app.use('mailer', Mailer(transporter, {from: process.env.FROM_EMAIL});
 
-// Use the service
-const email = {
-   from: 'FROM_EMAIL',
-   to: 'TO_EMAIL',
-   subject: 'SMTP test',
-   html: 'This is the email body'
-};
+  // Use the service
+  const email = {
+     from: account.user, // From email address
+     to: 'president@mars.com',
+     subject: 'SMTP test',
+     html: 'This is the email body'
+  };
 
-app.service('mailer').create(email).then(function (result) {
-  console.log('Sent email', result);
-}).catch(err => {
-  console.log(err);
-});
+  await app.service('mailer').create(email)
+  console.log(`Preview URL: ${nodemailer.getTestMessageUrl(info)}`)
+})(app)
 ```
 
 ## License
