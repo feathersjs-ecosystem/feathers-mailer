@@ -33,7 +33,7 @@ const mailer = require('feathers-mailer');
 
 See [here](https://nodemailer.com/message/#commmon-fields) for possible fields of `body`.
 
-## Example
+## Example with Madrill
 
 ```js
 const mailer = require('feathers-mailer');
@@ -50,7 +50,43 @@ app.use('/mailer', mailer(mandrill({
 const email = {
    from: 'FROM_EMAIL',
    to: 'TO_EMAIL',
-   subject: 'Sendgrid test',
+   subject: 'Mandrill test',
+   html: 'This is the email body'
+};
+
+app.service('mailer').create(email).then(function (result) {
+  console.log('Sent email', result);
+}).catch(err => {
+  console.log(err);
+});
+```
+
+## Example with Smtp (ethereal)
+
+```js
+const mailer = require('feathers-mailer');
+const nodemailer = require('nodemailer');
+
+const account = await nodemailer.createTestAccount().catch(console.log);
+
+  const transporter = nodemailer.createTransport({
+    host: account.smtp.host,
+    port: account.smtp.port,
+    secure: account.smtp.secure, // 487 only
+    requireTLS: true,
+    auth: {
+      user: account.user, // generated ethereal user
+      pass: account.pass // generated ethereal password
+    }
+  });
+
+  app.use('mailer', Mailer(transporter, {from: process.env.FROM_EMAIL});
+
+// Use the service
+const email = {
+   from: 'FROM_EMAIL',
+   to: 'TO_EMAIL',
+   subject: 'SMTP test',
    html: 'This is the email body'
 };
 
