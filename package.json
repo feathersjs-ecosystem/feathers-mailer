@@ -50,7 +50,7 @@
     "lib": "lib"
   },
   "dependencies": {
-    "debug": "^3.1.0",
+    "debug": "^4.0.0",
     "nodemailer": "^4.4.2",
     "uberproto": "^2.0.0"
   },
