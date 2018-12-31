@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "debug": "^4.0.0",
-    "nodemailer": "^4.4.2",
+    "nodemailer": "^5.0.0",
     "uberproto": "^2.0.0"
   },
   "devDependencies": {
