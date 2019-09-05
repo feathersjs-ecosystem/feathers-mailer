@@ -1,4 +1,4 @@
-const assert = require('assert');
+const assert = require('assert').strict;
 const createMailer = require('../lib');
 const stubTransport = require('nodemailer-stub-transport');
 const addressParser = require('address-rfc2822');
@@ -7,7 +7,7 @@ describe('feathers-mailer', () => {
   it('basic functionality', done => {
     assert.equal(typeof createMailer, 'function', 'exports function');
     const mailer = createMailer(stubTransport());
-    let mailData = {
+    const mailData = {
       from: '"Alice" <alice@example.com>',
       to: ['bob@example.com', '"Carol" <carol@example.com>'],
       subject: 'The revolution will not be televised',
