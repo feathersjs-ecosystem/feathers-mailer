@@ -50,16 +50,16 @@
     "lib": "lib"
   },
   "dependencies": {
-    "debug": "^4.0.0",
-    "nodemailer": "^6.0.0",
-    "uberproto": "^2.0.0"
+    "debug": "^4.1.1",
+    "nodemailer": "^6.3.0",
+    "uberproto": "^2.0.4"
   },
   "devDependencies": {
-    "address-rfc2822": "^2.0.0",
+    "address-rfc2822": "^2.0.4",
     "istanbul": "^1.1.0-alpha.1",
-    "mocha": "^6.0.0",
-    "nodemailer-mandrill-transport": "^1.1.0",
-    "nodemailer-stub-transport": "^1.0.0",
-    "semistandard": "^12.0.0"
+    "mocha": "^6.2.0",
+    "nodemailer-mandrill-transport": "^1.2.0",
+    "nodemailer-stub-transport": "^1.1.0",
+    "semistandard": "^14.1.0"
   }
 }
