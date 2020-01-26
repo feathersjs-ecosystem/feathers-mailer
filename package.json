@@ -57,7 +57,7 @@
   "devDependencies": {
     "address-rfc2822": "^2.0.4",
     "istanbul": "^1.1.0-alpha.1",
-    "mocha": "^6.2.0",
+    "mocha": "^7.0.1",
     "nodemailer-mandrill-transport": "^1.2.0",
     "nodemailer-stub-transport": "^1.1.0",
     "semistandard": "^14.1.0"
