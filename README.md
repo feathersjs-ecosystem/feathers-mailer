@@ -1,7 +1,6 @@
 # feathers-mailer
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/feathersjs-ecosystem/feathers-mailer.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/feathersjs-ecosystem/feathers-mailer.png?branch=master)](https://travis-ci.org/feathersjs-ecosystem/feathers-mailer)
+[![Node.js CI](https://github.com/feathersjs-ecosystem/feathers-mailer/actions/workflows/node.js.yml/badge.svg)](https://github.com/feathersjs-ecosystem/feathers-mailer/actions/workflows/node.js.yml)
 [![Dependency Status](https://img.shields.io/david/feathersjs-ecosystem/feathers-mailer.svg?style=flat-square)](https://david-dm.org/feathersjs-ecosystem/feathers-mailer)
 [![Download Status](https://img.shields.io/npm/dm/feathers-mailer.svg?style=flat-square)](https://www.npmjs.com/package/feathers-mailer)
 
