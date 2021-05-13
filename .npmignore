@@ -7,4 +7,5 @@
 .vscode/
 test/
 coverage/
+.nyc_output
 .github/
