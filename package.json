@@ -4,6 +4,7 @@
   "version": "3.1.0",
   "homepage": "https://github.com/feathersjs-ecosystem/feathers-mailer",
   "main": "lib/",
+  "types": "types/",
   "keywords": [
     "feathers",
     "feathers-plugin",
@@ -38,7 +39,8 @@
     "update-dependencies": "ncu -u",
     "lint": "semistandard --fix",
     "mocha": "mocha",
-    "test": "npm run lint && npm run coverage",
+    "test": "npm run lint && npm run dtslint && npm run coverage",
+    "dtslint": "dtslint types",
     "example": "babel-node examples/app",
     "coverage": "nyc npm run mocha"
   },
@@ -56,12 +58,18 @@
     "uberproto": "^2.0.6"
   },
   "devDependencies": {
+    "@feathersjs/feathers": "^4.5.11",
+    "@types/nodemailer": "^6.4.4",
+    "@types/nodemailer-smtp-transport": "^2.7.5",
     "address-rfc2822": "^2.1.0",
     "mocha": "^9.0.3",
     "nodemailer-mandrill-transport": "^1.2.0",
+    "nodemailer-smtp-transport": "^2.7.4",
     "nodemailer-stub-transport": "^1.1.0",
     "npm-check-updates": "^11.8.3",
     "nyc": "^15.1.0",
-    "semistandard": "^16.0.1"
+    "semistandard": "^16.0.1",
+    "dtslint": "^4.2.0",
+    "typescript": "^4.4.4"
   }
 }
