@@ -1,12 +1,13 @@
-const assert = require('assert').strict;
-const createMailer = require('../lib');
-const stubTransport = require('nodemailer-stub-transport');
-const addressParser = require('address-rfc2822');
+import assert from 'assert';
+import { Service } from '../src';
+import stubTransport from 'nodemailer-stub-transport';
+// @ts-ignore
+import addressParser from 'address-rfc2822';
 
 describe('feathers-mailer', () => {
   it('basic functionality', done => {
-    assert.equal(typeof createMailer, 'function', 'exports function');
-    const mailer = createMailer(stubTransport());
+    assert.equal(typeof Service, 'function', 'exports function');
+    const mailer = new Service(stubTransport());
     const mailData = {
       from: '"Alice" <alice@example.com>',
       to: ['bob@example.com', '"Carol" <carol@example.com>'],
@@ -32,6 +33,7 @@ describe('feathers-mailer', () => {
   });
 });
 
-function getEmailAddress (contact) {
+function getEmailAddress (contact: string) {
+  // @ts-ignore
   return addressParser.parse(contact)[0].address;
 }
