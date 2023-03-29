@@ -2,7 +2,25 @@
 
 ## [Unreleased](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/HEAD)
 
-[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v3.1.0...HEAD)
+[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v4.0.0...HEAD)
+
+**Merged pull requests:**
+
+- feat!: typescript [\#33](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/33) ([fratzinger](https://github.com/fratzinger))
+
+## [v4.0.0](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v4.0.0) (2023-03-29)
+
+[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v3.1.0...v4.0.0)
+
+**Closed issues:**
+
+- find hook for mailer service is missing [\#31](https://github.com/feathersjs-ecosystem/feathers-mailer/issues/31)
+- I created typings for this package - where to put them? [\#29](https://github.com/feathersjs-ecosystem/feathers-mailer/issues/29)
+- out-of-date dependencies in npm package [\#28](https://github.com/feathersjs-ecosystem/feathers-mailer/issues/28)
+
+## [v3.1.0](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v3.1.0) (2021-08-03)
+
+[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v3.0.1...v3.1.0)
 
 **Merged pull requests:**
 
@@ -13,12 +31,8 @@
 - Update nodemailer to the latest version 🚀 [\#21](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/21) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 - Update semistandard to the latest version 🚀 [\#20](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/20) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 - Update debug to the latest version 🚀 [\#19](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/19) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
-- Clarify what you want for SMTP transporters... [\#18](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/18) ([rayfoss](https://github.com/rayfoss))
+- Clarify what you want for SMTP transporters... [\#18](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/18) ([FossPrime](https://github.com/FossPrime))
 - remove a historical callback [\#15](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/15) ([bertho-zero](https://github.com/bertho-zero))
-
-## [v3.1.0](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v3.1.0) (2021-08-03)
-
-[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v3.0.1...v3.1.0)
 
 ## [v3.0.1](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v3.0.1) (2018-06-03)
 
