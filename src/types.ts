@@ -6,6 +6,15 @@ import type JSONTransport from 'nodemailer/lib/json-transport';
 import type SESTransport from 'nodemailer/lib/ses-transport';
 import { Transport as _Transport, Transporter, TransportOptions } from 'nodemailer';
 
+export {
+  SMTPTransport,
+  SMTPPool,
+  SendmailTransport,
+  StreamTransport,
+  JSONTransport,
+  SESTransport
+}
+
 export type AnyTransport = SMTPTransport | SMTPTransport.Options | string | SMTPPool | SMTPPool.Options | SendmailTransport | SendmailTransport.Options | StreamTransport | StreamTransport.Options | JSONTransport | JSONTransport.Options | SESTransport | SESTransport.Options | _Transport | TransportOptions;
 export type MailerInferCreateTransport<T extends AnyTransport> =
   T extends SMTPTransport | SMTPTransport.Options | string
