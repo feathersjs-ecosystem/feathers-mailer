@@ -28,7 +28,7 @@
     "url": "https://github.com/feathersjs-ecosystem/feathers-mailer/issues"
   },
   "engines": {
-    "node": ">= 12"
+    "node": ">= 16"
   },
   "scripts": {
     "prepublish": "npm run compile",
@@ -49,25 +49,25 @@
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "nodemailer": "^6.9.1"
+    "nodemailer": "^6.9.3"
   },
   "devDependencies": {
-    "@types/debug": "^4.1.7",
+    "@types/debug": "^4.1.8",
     "@types/mocha": "^10.0.1",
-    "@types/node": "^18.14.1",
-    "@types/nodemailer": "^6.4.7",
-    "@types/nodemailer-stub-transport": "^1.1.5",
-    "@typescript-eslint/eslint-plugin": "^5.53.0",
-    "@typescript-eslint/parser": "^5.53.0",
+    "@types/node": "^20.2.5",
+    "@types/nodemailer": "^6.4.8",
+    "@types/nodemailer-stub-transport": "^1.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
     "address-rfc2822": "^2.1.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.34.0",
+    "eslint": "^8.41.0",
     "mocha": "^10.2.0",
     "nodemailer-stub-transport": "^1.1.0",
-    "npm-check-updates": "^16.7.9",
+    "npm-check-updates": "^16.10.12",
     "nyc": "^15.1.0",
     "shx": "^0.3.4",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.1.3"
   }
 }
