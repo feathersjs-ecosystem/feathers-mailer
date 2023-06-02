@@ -1,16 +1,16 @@
 # Changelog
 
-## [Unreleased](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/HEAD)
+## [v4.1.1](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v4.1.1) (2023-06-02)
 
-[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v4.1.0...HEAD)
-
-**Merged pull requests:**
-
-- feat: update deps, make generics optional, reexport anything from nodemailer [\#34](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/34) ([fratzinger](https://github.com/fratzinger))
+[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v4.1.0...v4.1.1)
 
 ## [v4.1.0](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v4.1.0) (2023-06-02)
 
 [Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v4.0.0...v4.1.0)
+
+**Merged pull requests:**
+
+- feat: update deps, make generics optional, reexport anything from nodemailer [\#34](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/34) ([fratzinger](https://github.com/fratzinger))
 
 ## [v4.0.0](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v4.0.0) (2023-03-29)
 
