@@ -1,17 +1,12 @@
-import { Transport as _Transport, createTransport, SendMailOptions, TransportOptions } from 'nodemailer';
-import makeDebugger from 'debug';
+import { createTransport, SendMailOptions, TransportOptions } from 'nodemailer';
 import { MailerInferCreateTransport, AnyTransport } from './types';
-
-const debug = makeDebugger('feathers-mailer')
 
 export * from 'nodemailer';
 export * from './types';
 
 export class Service<T extends AnyTransport = AnyTransport, Defaults extends Parameters<MailerInferCreateTransport<T>>[1] = Parameters<MailerInferCreateTransport<T>>[1]> {
   transporter: ReturnType<MailerInferCreateTransport<T>>;
-  constructor (transport: AnyTransport, defaults?: Defaults) {
-    debug('constructor', transport);
-
+  constructor (transport: T, defaults?: Defaults) {
     if (!transport) {
       throw new Error('feathers-mailer: constructor `transport` must be provided');
     }
@@ -19,9 +14,8 @@ export class Service<T extends AnyTransport = AnyTransport, Defaults extends Par
     this.transporter = createTransport(transport, defaults) as ReturnType<MailerInferCreateTransport<T>>;
   }
 
-  async _create (body: SendMailOptions, params?: any) {
-    debug('create', body, params);
-
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  async _create (body: SendMailOptions, _params?: any) {
     // TODO maybe body should be text/html field
     // and params is rest of options
 
@@ -35,7 +29,7 @@ export class Service<T extends AnyTransport = AnyTransport, Defaults extends Par
   }
 }
 
-export default function init<T extends AnyTransport = _Transport, Defaults extends Parameters<MailerInferCreateTransport<T>>[1] = TransportOptions> (transport: AnyTransport, defaults?: Defaults) {
+export default function init<T extends AnyTransport = AnyTransport, Defaults extends Parameters<MailerInferCreateTransport<T>>[1] = TransportOptions> (transport: T, defaults?: Defaults) {
   return new Service<T, Defaults>(transport, defaults);
 }
 
