@@ -103,6 +103,28 @@ app
   });
 ```
 
+## Prevent mail to be treated as spam
+#### DKIM to prevent mail to be treated as spam
+A more and more appearing 'issue' these days, is that mail sent can be seen as spam. Especially if the 'from address' is not linked to the IP of the sending host. To prevent this, you can use a DKIM record. It does require a DNS mutation on the domain reflecting the 'from address', but it will prevent this. Following these steps you can implement this in `node-mailer`
+
+1. Go to https://easydmarc.com/tools/DKIM-record-generator to generate a DKIM record. In the form, enter the domain name (equal to the `from address` domain), and something to use as a selector e.g. `feathersMailer`.
+2. Ask a network administrator to publish the record which is generated in the domain.
+3. Ensure the record is active using https://easydmarc.com/tools/dkim-lookup. Once the test passes, continue (it might need time to replicate across the web)
+4. Add the following information to the `email` constance defined in the example above, so it becomes like this
+```js
+  const email = {
+     to: 'president@mars.com',
+     subject: 'SMTP test',
+     html: 'This is the email body',
+     domainName: 'THE DOMAIN ENTERED FOR THE RECORD (FROM ADDRESS DOMAIN)',
+     keySelector: 'THE SELECTOR YOU ENTERED TO GENERATE THE RECORD',
+     privateKey: 'THE CONTENT FROM THE `PRIVATE KEY` BUT REPLACE `linebreaks` WITH `\n`'
+  };
+```
+***Important:*** You must replace the `linebreaks` of the private key with `\n` or it won't work.
+
+A use case for this, could be a multitenancy application. There the reply domains would be different, but you might want to send from the local SMTP server of the ISP. You would then make it possible for each tenant to configure the three values in their tenant settings within the application, and dynamically collect it prior to sending the mail.
+
 ## License
 
 Copyright (c) 2025
