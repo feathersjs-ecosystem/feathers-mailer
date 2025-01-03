@@ -1,7 +1,7 @@
 import assert from 'assert';
 import { Service } from '../src';
 import stubTransport from 'nodemailer-stub-transport';
-// @ts-ignore
+// @ts-expect-error address-rfc2822 has no types
 import addressParser from 'address-rfc2822';
 
 describe('feathers-mailer', () => {
@@ -34,6 +34,5 @@ describe('feathers-mailer', () => {
 });
 
 function getEmailAddress (contact: string) {
-  // @ts-ignore
   return addressParser.parse(contact)[0].address;
 }
