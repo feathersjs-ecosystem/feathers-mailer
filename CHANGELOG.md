@@ -1,5 +1,18 @@
 # Changelog
 
+## [Unreleased](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/HEAD)
+
+[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v4.2.0...HEAD)
+
+**Merged pull requests:**
+
+- chore: update repository [\#37](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/37) ([fratzinger](https://github.com/fratzinger))
+- Update README.md with spam prevention [\#35](https://github.com/feathersjs-ecosystem/feathers-mailer/pull/35) ([edgar-koster](https://github.com/edgar-koster))
+
+## [v4.2.0](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v4.2.0) (2025-01-03)
+
+[Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v4.1.1...v4.2.0)
+
 ## [v4.1.1](https://github.com/feathersjs-ecosystem/feathers-mailer/tree/v4.1.1) (2023-06-02)
 
 [Full Changelog](https://github.com/feathersjs-ecosystem/feathers-mailer/compare/v4.1.0...v4.1.1)
