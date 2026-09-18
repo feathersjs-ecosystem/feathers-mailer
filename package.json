@@ -55,8 +55,7 @@
     "coverage": "vitest run --coverage",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "attw": "attw --pack . --profile esm-only",
-    "changelog": "github_changelog_generator -u feathersjs-ecosystem -p feathers-mailer && git add CHANGELOG.md && git commit -am \"Updating changelog\""
+    "attw": "attw --pack . --profile esm-only"
   },
   "peerDependencies": {
     "nodemailer": "^10.0.0"
