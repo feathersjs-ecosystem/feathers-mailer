@@ -1,4 +1,6 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# This workflow does a clean install of the dependencies, lints, type-checks and
+# runs the tests across the supported Node.js versions, then verifies the build
+# and the published type resolution.
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Node.js CI
@@ -8,29 +10,37 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22.x"
-      - run: npm ci
-      - run: npm run test
-
-  build:
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [20.x, 22.x]
+        node-version: [22.x, 24.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+
+      - run: npm install -g corepack@latest
+      - run: corepack enable
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run compile
+          cache: 'pnpm'
+      - run: pnpm i
+      - run: pnpm run lint
+      - run: pnpm run typecheck
+      - run: pnpm run coverage
+
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - run: npm install -g corepack@latest
+      - run: corepack enable
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'pnpm'
+      - run: pnpm i
+      - run: pnpm run build
+      - run: pnpm run attw

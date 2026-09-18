@@ -1,10 +1,22 @@
 {
   "name": "feathers-mailer",
-  "description": "Feathers mailer service",
   "version": "4.2.0",
+  "description": "Feathers mailer service",
   "homepage": "https://github.com/feathersjs-ecosystem/feathers-mailer",
-  "main": "lib/",
-  "types": "lib/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feathersjs-ecosystem/feathers-mailer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/feathersjs-ecosystem/feathers-mailer/issues"
+  },
+  "author": {
+    "name": "Feathers contributors",
+    "email": "hello@feathersjs.com",
+    "url": "https://feathersjs.com"
+  },
+  "contributors": [],
+  "license": "MIT",
   "keywords": [
     "feathers",
     "feathers-plugin",
@@ -13,59 +25,59 @@
     "mailer",
     "nodemailer"
   ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/feathersjs-ecosystem/feathers-mailer.git"
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
   },
-  "author": {
-    "name": "Feathers contributors",
-    "email": "hello@feathersjs.com",
-    "url": "https://feathersjs.com"
-  },
-  "contributors": [],
-  "bugs": {
-    "url": "https://github.com/feathersjs-ecosystem/feathers-mailer/issues"
-  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "src/**",
+    "dist/**"
+  ],
   "engines": {
-    "node": ">= 16"
+    "node": ">= 22.18.0"
   },
+  "packageManager": "pnpm@11.24.0",
+  "prettier": "@feathers-community/eslint-config/prettier",
   "scripts": {
-    "prepublish": "npm run compile",
-    "compile": "shx rm -rf lib/ && tsc",
-    "publish": "git push origin --tags && npm run changelog && git push origin",
-    "release:patch": "npm version patch && npm publish",
-    "release:minor": "npm version minor && npm publish",
-    "release:major": "npm version major && npm publish",
-    "changelog": "github_changelog_generator -u feathersjs-ecosystem -p feathers-mailer && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
-    "update-dependencies": "ncu -u",
-    "lint": "eslint src/**/*.ts test/**/*.ts --fix",
-    "mocha": "cross-env NODE_ENV=test TS_NODE_PROJECT='tsconfig.test.json' mocha --timeout 10000",
-    "test": "npm run lint && npm run coverage",
-    "coverage": "nyc npm run mocha"
+    "build": "tsdown",
+    "version": "pnpm run build",
+    "release": "np",
+    "vitest": "vitest",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "attw": "attw --pack . --profile esm-only",
+    "changelog": "github_changelog_generator -u feathersjs-ecosystem -p feathers-mailer && git add CHANGELOG.md && git commit -am \"Updating changelog\""
   },
-  "directories": {
-    "src": "src"
+  "peerDependencies": {
+    "nodemailer": "^10.0.0"
   },
-  "dependencies": {
-    "nodemailer": "^6.9.16"
+  "peerDependenciesMeta": {
+    "nodemailer": {
+      "optional": true
+    }
   },
   "devDependencies": {
-    "@eslint/js": "^9.17.0",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^22.10.5",
-    "@types/nodemailer": "^6.4.17",
-    "@types/nodemailer-stub-transport": "^1.1.8",
-    "address-rfc2822": "^2.2.2",
-    "cross-env": "^7.0.3",
-    "eslint": "^9.17.0",
-    "mocha": "^11.0.1",
-    "nodemailer-stub-transport": "^1.1.0",
-    "npm-check-updates": "^17.1.13",
-    "nyc": "^17.1.0",
-    "shx": "^0.3.4",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.2",
-    "typescript-eslint": "^8.19.0"
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@feathers-community/eslint-config": "^0.2.0",
+    "@tsconfig/node22": "^22.0.6",
+    "@types/node": "^26.6.1",
+    "@vitest/coverage-v8": "^5.0.1",
+    "eslint": "^10.10.0",
+    "nodemailer": "^10.0.10",
+    "np": "^12.1.1",
+    "prettier": "^3.9.8",
+    "tsdown": "^0.23.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.1"
   }
 }

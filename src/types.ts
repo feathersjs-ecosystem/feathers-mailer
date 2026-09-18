@@ -1,34 +1,43 @@
-import type SMTPTransport from 'nodemailer/lib/smtp-transport';
-import type SMTPPool from 'nodemailer/lib/smtp-pool';
-import type SendmailTransport from 'nodemailer/lib/sendmail-transport';
-import type StreamTransport from 'nodemailer/lib/stream-transport';
-import type JSONTransport from 'nodemailer/lib/json-transport';
-import type SESTransport from 'nodemailer/lib/ses-transport';
-import { Transport as _Transport, Transporter, TransportOptions } from 'nodemailer';
+import type {
+  JSONSentMessageInfo,
+  SESSentMessageInfo,
+  SMTPPoolSentMessageInfo,
+  SMTPSentMessageInfo,
+  SMTPTransportOptions,
+  SendmailSentMessageInfo,
+  SentMessageInfo,
+  StreamSentMessageInfo,
+  Transport,
+  TransportConfig,
+} from 'nodemailer'
 
-export {
-  SMTPTransport,
-  SMTPPool,
-  SendmailTransport,
-  StreamTransport,
-  JSONTransport,
-  SESTransport
+/**
+ * Anything `nodemailer.createTransport` accepts: the options object of one of
+ * the bundled transports, an SMTP connection URL, or a transport plugin.
+ */
+export type AnyTransport = TransportConfig | Transport<any> | string
+
+/**
+ * The `info` object the given transport resolves `sendMail` with.
+ *
+ * Since nodemailer 10 ships its own `createTransport` overloads, this mirrors
+ * their discriminants and their order, so `Service<T>` infers the same result
+ * type that a direct `createTransport(transport)` call would.
+ */
+export type MailerInferSentMessageInfo<T extends AnyTransport> = T extends {
+  pool: true
 }
-
-export type AnyTransport = SMTPTransport | SMTPTransport.Options | string | SMTPPool | SMTPPool.Options | SendmailTransport | SendmailTransport.Options | StreamTransport | StreamTransport.Options | JSONTransport | JSONTransport.Options | SESTransport | SESTransport.Options | _Transport | TransportOptions;
-export type MailerInferCreateTransport<T extends AnyTransport> =
-  T extends SMTPTransport | SMTPTransport.Options | string
-    ? (t: T, d?: SMTPTransport.Options) => Transporter<SMTPTransport.SentMessageInfo>
-    : T extends SMTPPool | SMTPPool.Options
-      ? (t: T, d?: SMTPPool.Options) => Transporter<SMTPPool.SentMessageInfo>
-      : T extends SendmailTransport | SendmailTransport.Options
-        ? (t: T, d?: SendmailTransport.Options) => Transporter<SendmailTransport.SentMessageInfo>
-        : T extends StreamTransport | StreamTransport.Options
-          ? (t: T, d?: StreamTransport.Options) => Transporter<StreamTransport.SentMessageInfo>
-          : T extends JSONTransport | JSONTransport.Options
-            ? (t: T, d?: JSONTransport.Options) => Transporter<JSONTransport.SentMessageInfo>
-            : T extends SESTransport | SESTransport.Options
-              ? (t: T, d?: SESTransport.Options) => Transporter<SESTransport.SentMessageInfo>
-              : T extends _Transport<infer U> | TransportOptions
-                ? (t: T, d?: TransportOptions) => Transporter<U>
-                : never;
+  ? SMTPPoolSentMessageInfo
+  : T extends { sendmail: true | string }
+    ? SendmailSentMessageInfo
+    : T extends { streamTransport: true }
+      ? StreamSentMessageInfo
+      : T extends { jsonTransport: true }
+        ? JSONSentMessageInfo
+        : T extends { SES: object }
+          ? SESSentMessageInfo
+          : T extends Transport<infer U>
+            ? U
+            : T extends SMTPTransportOptions | string
+              ? SMTPSentMessageInfo
+              : SentMessageInfo
