@@ -1,6 +1,6 @@
 {
   "name": "feathers-mailer",
-  "version": "4.2.0",
+  "version": "5.0.0",
   "description": "Feathers mailer service",
   "homepage": "https://github.com/feathersjs-ecosystem/feathers-mailer",
   "repository": {
